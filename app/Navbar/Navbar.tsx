@@ -11,7 +11,7 @@ export default function Navbar() {
   }, []);
 
   const logout = () => {
-    localStorage.setItem("token", "undefined");
+    localStorage.clear();
     setToken(null);
   };
 
@@ -37,18 +37,6 @@ export default function Navbar() {
             </Link>
           </div>
         )}
-        {/* <div className="flex-none gap-2">
-          <form action={searchProducts}>
-            <div className="form-control">
-              <input
-                name="searchQuery"
-                placeholder="search"
-                className="input input-bordered w-full min-w-[100px]"
-              />
-            </div>
-          </form>
-          <ShoppingCartButton cart={cart} />
-        </div> */}
       </div>
     </div>
   );
