@@ -24,7 +24,7 @@ export default function Navbar() {
           </Link>
         </div>
         {/* Add a login button if token is null */}
-        {token ? (
+        {token===null ? (
           <div className="flex-2">
             <Link href="/sign-up" className="btn btn-ghost text-xl normal-case">
               <p>Sign Up</p>
