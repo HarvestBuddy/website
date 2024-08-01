@@ -6,8 +6,7 @@ const nextConfig = {
   },
   experimental: {
     serverActions: true,
-  },
-  distDir: "build"
+  }
 };
 
 module.exports = nextConfig;
