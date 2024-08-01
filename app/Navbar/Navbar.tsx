@@ -1,0 +1,55 @@
+"use client";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+
+export default function Navbar() {
+  const [token, setToken] = useState<string | null>(null);
+
+  useEffect(() => {
+    const storedToken = localStorage.getItem("token");
+    setToken(storedToken);
+  }, []);
+
+  const logout = () => {
+    localStorage.setItem("token", "undefined");
+    setToken(null);
+  };
+
+  return (
+    <div className="z-50 sticky top-0 bg-gray-200 shadow-lg">
+      <div className="navbar max-w-7xl m-auto flex-col sm:flex-row gap-2">
+        <div className="flex-1">
+          <Link href="/" className="btn btn-ghost text-xl normal-case">
+            <p>Harvest Buddy</p>
+          </Link>
+        </div>
+        {/* Add a login button if token is null */}
+        {token ? (
+          <div className="flex-2">
+            <Link href="/sign-up" className="btn btn-ghost text-xl normal-case">
+              <p>Sign Up</p>
+            </Link>
+          </div>
+        ) : (
+          <div className="flex-2">
+            <Link href="/" className="btn btn-ghost text-xl normal-case" onClick={logout}>
+              <p>Logout</p>
+            </Link>
+          </div>
+        )}
+        {/* <div className="flex-none gap-2">
+          <form action={searchProducts}>
+            <div className="form-control">
+              <input
+                name="searchQuery"
+                placeholder="search"
+                className="input input-bordered w-full min-w-[100px]"
+              />
+            </div>
+          </form>
+          <ShoppingCartButton cart={cart} />
+        </div> */}
+      </div>
+    </div>
+  );
+}
