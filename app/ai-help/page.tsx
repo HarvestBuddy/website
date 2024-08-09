@@ -87,7 +87,7 @@ export default function AiHelp() {
                   <p>{response.diagnosis}</p>
                   <br />
                   <h2 className="text-2xl">Treatment:</h2>
-                  <br />
+                  {/* <br /> */}
                   <ul className="list-disc ml-6">
                     {response?.treatment.map((point: string, index: number) => (
                       <li key={index}>{point}</li>
