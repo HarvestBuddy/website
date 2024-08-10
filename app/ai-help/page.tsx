@@ -78,7 +78,7 @@ export default function AiHelp() {
                 <></>
               )}
             </h1>
-            {response ? (
+            {response && !response.error ? (
               <>
                 <div className="flex flex-col">
                   <br />
@@ -96,7 +96,7 @@ export default function AiHelp() {
                 </div>
               </>
             ) : (
-              <></>
+              <p>{response?.error}</p>
             )}
           </div>
         </div>
