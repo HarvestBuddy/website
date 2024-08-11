@@ -28,6 +28,7 @@ export default function AiHelp() {
         console.log(data);
         setResponse(data);
       } catch (error) {
+        setResponse({ error: "Error: Memory Overflow. Upgrade the Deploy to get more requests." });
         console.error("Error:", error);
       }
       setLoading(false);
