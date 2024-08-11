@@ -32,19 +32,19 @@ export default function Hero() {
             className="mb-5 text-clip bg-clip-text dark bg-gradient-to-r from-primary to-accent-500"
           />
 
-          {token == undefined ? (
+          {/* {token == undefined ? (
             <button className="btn btn-secondary">
               <Link href="/sign-up">
                 <p>Login</p>
               </Link>
             </button>
-          ) : (
+          ) : ( */}
             <button className="btn btn-secondary">
               <Link href="/ai-help">
                 <p>Explore Our Ai</p>
               </Link>
             </button>
-          )}
+          {/* )} */}
         </div>
       </div>
     </div>
